@@ -5,15 +5,6 @@ import Button from './Button.astro';
 <section class="relative h-[100svh] min-h-[600px] lg:h-[100dvh] flex items-center overflow-hidden bg-navy select-none">
   <!-- Video / Image background container -->
   <div class="absolute inset-0 z-0 bg-navy" id="hero-bg-container">
-    <!-- Static image background for mobile / fallback (Eager load LCP) -->
-    <img
-      src="/images/services/flatbed.jpg"
-      alt="Heavy flatbed trailer hauling industrial cargo on a highway"
-      class="absolute inset-0 h-full w-full object-cover opacity-25"
-      aria-hidden="true"
-      loading="eager"
-      id="hero-poster"
-    />
     <!-- Dark overlay for text readability -->
     <div class="absolute inset-0 bg-navy/60 z-10" id="hero-overlay"></div>
   </div>
