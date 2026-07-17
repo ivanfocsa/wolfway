@@ -5,19 +5,27 @@ import CarrierForm from '@/components/CarrierForm.astro';
 const reasons = [
   {
     title: 'Consistent Volume',
-    description: 'We move freight every day. Our shippers provide steady, year-round loads so your trucks stay busy.',
+    description: 'We move open-deck freight daily. Our shipping partners provide steady, year-round loads so your trucks stay busy and moving.',
     icon: 'M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z',
   },
   {
-    title: 'Fair Rates',
-    description: 'We believe in partnerships, not one-sided deals. Our rates reflect the market and respect your bottom line.',
+    title: 'Fair Rates & Fast Pay',
+    description: 'We believe in sustainable partnerships. Our freight rates reflect real-time market indices, with prompt payment schedules.',
     icon: 'M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z',
   },
   {
-    title: 'Reliable Communication',
-    description: 'Our dispatch team is responsive, transparent, and professional. You\'ll always know where things stand.',
+    title: '24/7 Dispatch Support',
+    description: 'Clear, direct communication with a dedicated coordinator. No automated loops, just professional dispatchers who answer.',
     icon: 'M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z',
   },
+];
+
+const requirements = [
+  'Active Interstate Authority (MC Number) for at least 6 months',
+  'Satisfactory FMCSA safety rating',
+  'Minimum $1,000,000 Auto Liability insurance coverage',
+  'Minimum $100,000 Cargo Insurance coverage',
+  'Proper load securement equipment (chains, straps, binders, tarps)',
 ];
 ---
 
@@ -32,7 +40,7 @@ const reasons = [
         Join Our Carrier Network
       </h1>
       <p class="mt-5 max-w-2xl text-base md:text-lg text-white/60 font-body font-light leading-relaxed">
-        We're always looking for reliable flatbed and open-deck carriers to grow with us. Apply today and start hauling.
+        We partner with safety-minded flatbed and open-deck carriers across the United States. Apply today to access consistent volume and fair rates.
       </p>
     </div>
   </section>
@@ -44,36 +52,66 @@ const reasons = [
       <!-- Side-by-Side Layout -->
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
         
-        <!-- Left Column: Reasons to Partner -->
-        <div class="lg:col-span-5 space-y-5">
-          <div class="mb-2">
+        <!-- Left Column: Reasons + Requirements -->
+        <div class="lg:col-span-5 space-y-8">
+          <div>
             <h2 class="font-heading text-2xl font-bold uppercase text-ink">
               Why Partner With WolfWay
             </h2>
-            <p class="text-slate-500 font-body font-light text-sm mt-1">
-              We treat our carriers like partners because that's what you are.
+            <p class="text-slate-600 font-body font-light text-sm mt-1">
+              We treat our carrier partners with respect and communicate transparently at every step.
             </p>
           </div>
 
-          {reasons.map((r) => (
-            <div class="flex items-start gap-4 p-6 bg-white border border-slate-200/40 rounded-sm hover:border-cyan/30 hover:shadow-sm transition-all duration-300 group">
-              <!-- Icon Container -->
-              <div class="flex-shrink-0 flex items-center justify-center h-11 w-11 rounded-sm border border-slate-200 bg-slate-50 text-slate-600 group-hover:border-cyan/30 group-hover:text-cyan transition-colors">
-                <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
-                  <path stroke-linecap="round" stroke-linejoin="round" d={r.icon} />
-                </svg>
+          <!-- Reasons Stack -->
+          <div class="space-y-4">
+            {reasons.map((r) => (
+              <div class="flex items-start gap-4 p-5 bg-white border border-slate-200/40 rounded-sm hover:border-cyan/30 hover:shadow-sm transition-all duration-300 group">
+                <!-- Icon Container -->
+                <div class="flex-shrink-0 flex items-center justify-center h-11 w-11 rounded-sm border border-slate-200 bg-slate-50 text-slate-600 group-hover:border-cyan/30 group-hover:text-cyan transition-colors">
+                  <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d={r.icon} />
+                  </svg>
+                </div>
+                
+                <div>
+                  <h3 class="font-heading text-base font-bold uppercase text-ink mb-1 tracking-tight">
+                    {r.title}
+                  </h3>
+                  <p class="text-slate-600 font-body font-light text-sm leading-relaxed">
+                    {r.description}
+                  </p>
+                </div>
               </div>
-              
-              <div>
-                <h3 class="font-heading text-base font-bold uppercase text-ink mb-2 tracking-tight">
-                  {r.title}
-                </h3>
-                <p class="text-slate-500 font-body font-light text-sm leading-relaxed">
-                  {r.description}
-                </p>
-              </div>
-            </div>
-          ))}
+            ))}
+          </div>
+
+          <!-- Image Box -->
+          <div class="relative overflow-hidden border border-slate-200/40 rounded-sm shadow-sm aspect-[16/10] bg-slate-200">
+            <img
+              src="/images/services/open-deck.jpg"
+              alt="WolfWay open deck flatbed trailer with cargo secured on the road"
+              class="object-cover w-full h-full"
+              loading="lazy"
+            />
+          </div>
+
+          <!-- Onboarding Requirements -->
+          <div class="bg-white p-6 border border-slate-200/40 rounded-sm shadow-sm">
+            <h3 class="font-heading text-lg font-bold uppercase text-ink mb-4 tracking-tight">
+              Onboarding Requirements
+            </h3>
+            <ul class="space-y-3">
+              {requirements.map((req) => (
+                <li class="flex items-start gap-3 text-sm text-slate-600 font-body font-light">
+                  <svg class="h-5 w-5 text-cyan shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                  </svg>
+                  <span>{req}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
 
         <!-- Right Column: Carrier Partnership Form -->
@@ -85,8 +123,8 @@ const reasons = [
             <h3 class="font-heading text-2xl font-bold uppercase text-ink">
               Apply to Join
             </h3>
-            <p class="text-slate-400 text-xs mt-1.5 font-body">
-              Complete the form below and our carrier relations team will review your application.
+            <p class="text-slate-500 text-xs mt-1.5 font-body">
+              Please complete all required fields (*) below and our compliance team will review your credentials.
             </p>
           </div>
           
