@@ -1,6 +1,0 @@
-{
-  // https://developers.cloudflare.com/pages/configuration/wrangler-configuration/
-  "$schema": "node_modules/wrangler/config-schema.json",
-  "name": "wolfway-logistics",
-  "compatibility_date": "2026-07-16"
-}
