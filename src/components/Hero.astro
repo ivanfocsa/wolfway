@@ -4,7 +4,7 @@ import Button from './Button.astro';
 
 <section class="relative h-[100svh] min-h-[600px] lg:h-[100dvh] flex items-center overflow-hidden bg-navy select-none">
   <!-- Video / Image background container -->
-  <div class="absolute inset-0 z-0 bg-navy" id="hero-bg-container">
+  <div class="absolute inset-0 z-0" id="hero-bg-container" style="background: url('/images/hero-poster.jpg') center/cover no-repeat #0B1526;">
     <!-- Inline Video element for instant browser parsing and preloading -->
     <video
       id="hero-video"
@@ -13,9 +13,9 @@ import Button from './Button.astro';
       loop
       playsinline
       preload="auto"
+      poster="/images/hero-poster.jpg"
       aria-hidden="true"
     >
-      <source src="/videos/hero.webm" type="video/webm" />
       <source src="/videos/hero.mp4" type="video/mp4" />
     </video>
     <!-- Dark overlay for text readability -->
