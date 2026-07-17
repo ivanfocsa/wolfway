@@ -3,22 +3,52 @@ import Button from './Button.astro';
 ---
 
 <section class="relative h-[100svh] min-h-[600px] lg:h-[100dvh] flex items-center overflow-hidden bg-navy">
-  <!-- Video background -->
-  <div class="absolute inset-0 z-0">
-    <video
-      autoplay
-      muted
-      loop
-      playsinline
-      preload="metadata"
-      class="h-full w-full object-cover"
+  <!-- Video / Image background container -->
+  <div class="absolute inset-0 z-0 bg-navy" id="hero-bg-container">
+    <!-- Static image background for mobile / fallback -->
+    <img
+      src="/images/services/flatbed.jpg"
+      alt=""
+      class="absolute inset-0 h-full w-full object-cover opacity-25"
       aria-hidden="true"
-    >
-      <source src="/videos/hero.mp4" type="video/mp4" />
-    </video>
-    <!-- Dark overlay -->
-    <div class="absolute inset-0 bg-navy/80"></div>
+      loading="eager"
+    />
+    <!-- Dark overlay for static image -->
+    <div class="absolute inset-0 bg-navy/60"></div>
   </div>
+
+  <script>
+    function loadHeroVideo() {
+      if (window.innerWidth >= 768) {
+        const container = document.getElementById('hero-bg-container');
+        if (container && !container.querySelector('video')) {
+          const video = document.createElement('video');
+          video.className = 'absolute inset-0 h-full w-full object-cover z-0';
+          video.autoplay = true;
+          video.muted = true;
+          video.loop = true;
+          video.playsInline = true;
+          video.setAttribute('aria-hidden', 'true');
+          
+          const source = document.createElement('source');
+          source.src = '/videos/hero.mp4';
+          source.type = 'video/mp4';
+          
+          video.appendChild(source);
+          
+          const overlay = document.createElement('div');
+          overlay.className = 'absolute inset-0 bg-navy/80 z-10';
+          
+          container.appendChild(video);
+          container.appendChild(overlay);
+        }
+      }
+    }
+
+    // Run on load and page transition
+    loadHeroVideo();
+    document.addEventListener('astro:page-load', loadHeroVideo);
+  </script>
 
   <!-- Content -->
   <div class="relative z-10 mx-auto max-w-7xl px-5 lg:px-10 pt-28 sm:pt-24 pb-10 w-full flex flex-col justify-center h-full">

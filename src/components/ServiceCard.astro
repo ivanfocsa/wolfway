@@ -13,6 +13,7 @@ const { title, description, imageAlt, imagePath, href } = Astro.props;
 <a
   href={href}
   class="group block"
+  aria-label={`Learn more about ${title}`}
 >
   <!-- Image Container -->
   <div class="relative aspect-[4/3] overflow-hidden rounded-sm border border-slate-200/40 bg-slate-100 shadow-sm">

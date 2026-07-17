@@ -62,7 +62,7 @@ import Button from '@/components/Button.astro';
   id="mobile-menu-overlay"
   class="fixed inset-0 z-[60] lg:hidden"
   aria-hidden="true"
-  style="pointer-events:none;"
+  style="display: none;"
 >
   <!-- Backdrop -->
   <div
@@ -156,7 +156,10 @@ import Button from '@/components/Button.astro';
   /* ── Open ── */
   function openMenu() {
     menuOpen = true;
-    if (overlay) overlay.style.pointerEvents = 'auto';
+    if (overlay) {
+      overlay.style.display = 'block';
+      overlay.offsetHeight; // Force reflow
+    }
     overlay?.setAttribute('aria-hidden','false');
     openBtn?.setAttribute('aria-expanded','true');
     if (backdrop) backdrop.style.opacity = '1';
@@ -172,7 +175,9 @@ import Button from '@/components/Button.astro';
     openBtn?.setAttribute('aria-expanded','false');
     overlay?.setAttribute('aria-hidden','true');
     setTimeout(() => {
-      if (!menuOpen && overlay) overlay.style.pointerEvents = 'none';
+      if (!menuOpen && overlay) {
+        overlay.style.display = 'none';
+      }
     }, 450);
     document.body.style.overflow = '';
   }
