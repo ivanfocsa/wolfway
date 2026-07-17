@@ -6,7 +6,7 @@ import Button from './Button.astro';
 <section class="relative overflow-hidden border-t border-b border-white/5 select-none" data-animate="fade-up">
   <div class="grid md:grid-cols-2">
     <!-- Left Panel: Shippers -->
-    <div class="relative bg-offwhite py-16 sm:py-20 px-8 sm:px-12 lg:px-20 flex flex-col justify-center items-start border-b md:border-b-0 md:border-r border-slate-200/60">
+    <div class="relative bg-offwhite py-16 sm:py-20 px-8 sm:px-12 lg:px-20 flex flex-col justify-center items-start">
       <p class="font-heading text-xs font-semibold uppercase tracking-[0.25em] text-cyan mb-4">
         FOR SHIPPERS
       </p>
@@ -28,9 +28,6 @@ import Button from './Button.astro';
 
     <!-- Right Panel: Drivers & Carriers -->
     <div class="relative bg-navy py-16 sm:py-20 px-8 sm:px-12 lg:px-20 flex flex-col justify-center items-start overflow-hidden">
-      <!-- Grid pattern overlay -->
-      <div class="absolute inset-0 bg-[linear-gradient(to_right,#ffffff02_1px,transparent_1px),linear-gradient(to_bottom,#ffffff02_1px,transparent_1px)] bg-[size:3rem_3rem]" aria-hidden="true"></div>
-
       <div class="relative z-10 w-full flex flex-col items-start">
         <p class="font-heading text-xs font-semibold uppercase tracking-[0.25em] text-cyan mb-4">
           FOR DRIVERS & CARRIERS
