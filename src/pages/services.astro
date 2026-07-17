@@ -1,0 +1,108 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import CTASection from '@/components/CTASection.astro';
+import Button from '@/components/Button.astro';
+import { services } from '@/content/services';
+---
+
+<BaseLayout
+  title="Services"
+  description="Flatbed freight, step deck transport, and open deck logistics services. Reliable open-deck transportation across the United States."
+>
+  <!-- Page Header -->
+  <section class="bg-navy pt-32 pb-16">
+    <div class="mx-auto max-w-7xl px-5 lg:px-10">
+      <h1 class="font-heading text-4xl md:text-5xl font-bold uppercase text-white max-w-3xl">
+        Open-Deck Transportation Services
+      </h1>
+      <p class="mt-4 max-w-2xl text-base leading-relaxed text-white/60">
+        WolfWay Logistics provides specialized open-deck transportation solutions across the United States. From standard flatbed loads to complex step deck shipments, our team delivers the capacity, expertise, and reliability your freight demands.
+      </p>
+    </div>
+  </section>
+
+  <!-- Service Detail Sections -->
+  {services.map((service, index) => {
+    const isOdd = index % 2 === 0;
+    return (
+      <section
+        id={service.slug}
+        class="py-20 lg:py-28 bg-offwhite"
+        data-animate="fade-up"
+      >
+        <div
+          class:list={[
+            'mx-auto max-w-7xl px-5 lg:px-10 grid gap-12 lg:gap-16 items-center',
+            'grid-cols-1 lg:grid-cols-2',
+          ]}
+        >
+          {/* Image */}
+          <div
+            class:list={[
+              'aspect-[16/9] overflow-hidden rounded-xl border border-slate-200/60 bg-slate-100 shadow-sm relative group',
+              !isOdd && 'lg:order-2',
+            ]}
+          >
+            <img
+              src={service.imagePath}
+              alt={service.imageAlt}
+              loading="lazy"
+              class="h-full w-full object-cover transition-transform duration-500 hover:scale-[1.03]"
+            />
+          </div>
+
+          {/* Content */}
+          <div class:list={[!isOdd && 'lg:order-1']}>
+            <h2 class="font-heading text-3xl font-bold uppercase text-ink">
+              {service.title}
+            </h2>
+            <p class="mt-4 text-base leading-relaxed text-steel">
+              {service.longDescription}
+            </p>
+
+            {/* Features list */}
+            <ul class="mt-6 space-y-3">
+              {service.features.map((feature) => (
+                <li class="flex items-start gap-3">
+                  <svg
+                    class="mt-0.5 h-5 w-5 shrink-0 text-cyan"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                    aria-hidden="true"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                      clip-rule="evenodd"
+                    />
+                  </svg>
+                  <span class="text-steel text-sm leading-relaxed">{feature}</span>
+                </li>
+              ))}
+            </ul>
+
+            <div class="mt-8">
+              <Button
+                variant="primary"
+                href="/request-a-quote"
+                arrow={true}
+                class="group"
+              >
+                Request a Quote for {service.shortTitle}
+              </Button>
+            </div>
+          </div>
+        </div>
+      </section>
+    );
+  })}
+
+  <!-- Bottom CTA -->
+  <CTASection
+    variant="dark"
+    heading="Need a Custom Solution?"
+    description="Every load is different. Whether you need specialized equipment, multi-stop routing, or dedicated capacity, our team will build a transportation plan tailored to your freight."
+    buttonText="Contact Us"
+    buttonHref="/contact"
+  />
+</BaseLayout>

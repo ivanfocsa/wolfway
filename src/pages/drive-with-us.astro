@@ -1,0 +1,109 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import DriverForm from '@/components/DriverForm.astro';
+
+const benefits = [
+  {
+    title: 'Competitive Pay',
+    description: 'Top-of-market rates with weekly pay, fuel surcharges, and performance bonuses to keep you earning.',
+    icon: 'M12 6v12m-3-2.818.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33M21 12a9 9 0 11-18 0 9 9 0 0118 0z',
+  },
+  {
+    title: 'Consistent Freight',
+    description: 'Steady open-deck loads across the lower 48 so you stay loaded and keep moving with no sitting around.',
+    icon: 'M8.25 18.75a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h6m-9 0H3.375a1.125 1.125 0 01-1.125-1.125V14.25m17.25 4.5a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h1.125c.621 0 1.129-.504 1.09-1.124a17.902 17.902 0 00-3.213-9.193 2.056 2.056 0 00-1.58-.86H14.25M16.5 18.75h-2.25m0-11.177v-.958c0-.568-.422-1.048-.987-1.106a48.554 48.554 0 00-10.026 0 1.106 1.106 0 00-.987 1.106v7.635m12-6.677v6.677m0 4.5v-4.5m0 0h-12',
+  },
+  {
+    title: 'Dedicated Support',
+    description: 'A real person on the other end of the line. Our dispatch team has your back around the clock.',
+    icon: 'M20.25 8.511c.884.284 1.5 1.128 1.5 2.097v4.286c0 1.136-.847 2.1-1.98 2.193-.34.027-.68.052-1.02.072v3.091l-3-3c-1.354 0-2.694-.055-4.02-.163a2.115 2.115 0 01-.825-.242m9.345-8.334a2.126 2.126 0 00-.476-.095 48.64 48.64 0 00-8.048 0c-1.131.094-1.976 1.057-1.976 2.192v4.286c0 .837.46 1.58 1.155 1.951m9.345-8.334V6.637c0-1.621-1.152-3.026-2.76-3.235A48.455 48.455 0 0011.25 3c-2.115 0-4.198.137-6.24.402-1.608.209-2.76 1.614-2.76 3.235v6.226c0 1.621 1.152 3.026 2.76 3.235.577.075 1.157.14 1.74.194V21l4.155-4.155',
+  },
+  {
+    title: 'Home Time',
+    description: 'We work with you to build routes that get you home regularly. Your family matters to us.',
+    icon: 'M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25',
+  },
+];
+---
+
+<BaseLayout
+  title="Drive With Us | WolfWay Logistics"
+  description="Join WolfWay Logistics as an OTR driver or owner operator. Competitive pay and consistent open-deck freight."
+>
+  <!-- Page Header -->
+  <section class="bg-navy pt-36 pb-24 relative overflow-hidden">
+    <!-- Grid line background -->
+    <div class="absolute inset-0 bg-[linear-gradient(to_right,#ffffff02_1px,transparent_1px),linear-gradient(to_bottom,#ffffff02_1px,transparent_1px)] bg-[size:3rem_3rem]" aria-hidden="true"></div>
+    <!-- Soft glow accent -->
+    <div class="absolute top-1/2 left-1/4 -translate-y-1/2 w-[400px] h-[400px] bg-cyan/5 rounded-full blur-[120px]" aria-hidden="true"></div>
+
+    <div class="mx-auto max-w-7xl px-5 lg:px-10 relative z-10">
+      <h1 class="font-heading text-4xl sm:text-5xl lg:text-6xl font-extrabold uppercase text-white leading-none tracking-tight">
+        Drive With WolfWay
+      </h1>
+      <p class="mt-5 max-w-2xl text-base md:text-lg text-white/60 font-body font-light leading-relaxed">
+        We're looking for experienced OTR drivers and owner operators who want steady open-deck freight, fair pay, and a team that actually has your back.
+      </p>
+    </div>
+  </section>
+
+  <!-- Modern Spacious Content Section -->
+  <section class="bg-offwhite py-24 relative overflow-hidden" data-animate="fade-up">
+    <!-- Subtle light grid line background -->
+    <div class="absolute inset-0 bg-[linear-gradient(to_right,#00000003_1px,transparent_1px),linear-gradient(to_bottom,#00000003_1px,transparent_1px)] bg-[size:3.5rem_3.5rem]" aria-hidden="true"></div>
+    <!-- Soft light glow -->
+    <div class="absolute top-1/3 right-1/4 w-[350px] h-[350px] bg-cyan/5 rounded-full blur-[100px] pointer-events-none" aria-hidden="true"></div>
+
+    <div class="mx-auto max-w-7xl px-5 lg:px-10 relative z-10">
+      
+      <!-- Side-by-Side Layout (Benefits Left, Form Right) -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+        
+        <!-- Left Column: Benefits (col-span-5) -->
+        <div class="lg:col-span-5 space-y-5">
+          {benefits.map((b) => (
+            <div class="flex items-start gap-4 p-6 bg-white border border-slate-200/60 rounded-2xl hover:border-cyan/30 hover:shadow-[0_12px_40px_rgba(0,168,225,0.04)] transition-all duration-300 group relative overflow-hidden">
+              <!-- Glow corner element on hover -->
+              <div class="absolute top-0 right-0 w-24 h-24 bg-cyan/5 rounded-full blur-xl -mr-8 -mt-8 group-hover:bg-cyan/10 transition-all duration-500" aria-hidden="true"></div>
+              
+              <!-- Icon Container -->
+              <div class="flex-shrink-0 flex items-center justify-center h-11 w-11 rounded-lg border border-slate-200 bg-slate-50/50 text-slate-600 group-hover:border-cyan/30 group-hover:text-cyan transition-colors shadow-sm relative z-10">
+                <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d={b.icon} />
+                </svg>
+              </div>
+              
+              <div class="relative z-10">
+                <h2 class="font-heading text-base font-bold uppercase text-ink mb-2 tracking-tight">
+                  {b.title}
+                </h2>
+                <p class="text-slate-500 font-body font-light text-sm leading-relaxed">
+                  {b.description}
+                </p>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <!-- Right Column: Application Form (col-span-7) -->
+        <div class="lg:col-span-7 bg-white p-8 sm:p-12 border border-slate-200/60 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 relative">
+          <!-- Top highlight line -->
+          <div class="absolute top-0 left-0 right-0 h-1 bg-cyan rounded-t-2xl"></div>
+          
+          <div class="mb-8">
+            <h3 class="font-heading text-2xl font-bold uppercase text-ink">
+              Quick Application
+            </h3>
+            <p class="text-slate-400 text-xs mt-1.5 font-body">
+              Please fill out all required fields (*) and our recruiting team will review your application.
+            </p>
+          </div>
+          
+          <DriverForm />
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+</BaseLayout>

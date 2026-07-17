@@ -1,0 +1,88 @@
+---
+import { footerNav } from '@/content/navigation';
+import { company } from '@/content/company';
+
+const year = new Date().getFullYear();
+---
+
+<footer class="bg-navy border-t border-white/5">
+  <div class="mx-auto max-w-7xl px-5 lg:px-10 py-16">
+    <div class="grid grid-cols-1 gap-12 md:grid-cols-3">
+      <!-- Brand -->
+      <div>
+        <a href="/" class="flex items-center gap-3 group" aria-label="WolfWay Logistics home">
+          <img
+            src="/images/logo_icon.png"
+            alt="WolfWay Logo"
+            class="h-20 w-20 object-contain group-hover:scale-105 transition-transform"
+          />
+          <span class="font-heading text-2xl font-extrabold uppercase tracking-widest text-white group-hover:text-cyan transition-colors">
+            WolfWay
+          </span>
+        </a>
+        <p class="mt-4 text-sm leading-relaxed text-steel max-w-xs">
+          Open-deck freight transportation built around safety, communication and dependable delivery.
+        </p>
+      </div>
+
+      <!-- Navigation -->
+      <div>
+        <h3 class="font-heading text-sm font-semibold uppercase tracking-wider text-white mb-4">
+          Navigation
+        </h3>
+        <ul class="space-y-2.5">
+          {footerNav.map((item) => (
+            <li>
+              <a
+                href={item.href}
+                class="text-sm text-steel hover:text-white transition-colors duration-200"
+              >
+                {item.label}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <!-- Contact -->
+      <div>
+        <h3 class="font-heading text-sm font-semibold uppercase tracking-wider text-white mb-4">
+          Contact
+        </h3>
+        <ul class="space-y-2.5">
+          <li>
+            <a
+              href={`tel:${company.phoneRaw}`}
+              class="text-sm text-steel hover:text-white transition-colors duration-200"
+            >
+              {company.phone}
+            </a>
+          </li>
+          <li>
+            <a
+              href={`mailto:${company.email}`}
+              class="text-sm text-steel hover:text-white transition-colors duration-200"
+            >
+              {company.email}
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Bottom bar -->
+    <div class="mt-12 pt-8 border-t border-white/5 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <p class="text-xs text-steel">
+        &copy; {year} {company.name}. All rights reserved.
+      </p>
+      <div class="flex gap-6">
+        <a href="/privacy-policy" class="text-xs text-steel hover:text-white transition-colors duration-200">
+          Privacy Policy
+        </a>
+        <a href="/terms" class="text-xs text-steel hover:text-white transition-colors duration-200">
+          Terms of Service
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>

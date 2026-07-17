@@ -1,0 +1,55 @@
+---
+import Button from './Button.astro';
+---
+
+<section class="relative h-screen min-h-[650px] lg:h-[100dvh] flex items-center overflow-hidden bg-navy">
+  <!-- Video background -->
+  <div class="absolute inset-0 z-0">
+    <video
+      autoplay
+      muted
+      loop
+      playsinline
+      preload="metadata"
+      class="h-full w-full object-cover"
+      aria-hidden="true"
+    >
+      <source src="/videos/hero.mp4" type="video/mp4" />
+    </video>
+    <!-- Dark overlay -->
+    <div class="absolute inset-0 bg-navy/80"></div>
+  </div>
+
+  <!-- Content -->
+  <div class="relative z-10 mx-auto max-w-7xl px-5 lg:px-10 pt-24 pb-12 w-full flex flex-col justify-center h-full">
+    <div class="max-w-3xl">
+      <!-- H1 with GSAP reveal -->
+      <div class="overflow-hidden mb-6 lg:mb-8">
+        <h1
+          id="hero-heading"
+          class="font-heading text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-extrabold uppercase text-white leading-[0.95] tracking-tight"
+        >
+          Open-deck freight,<br />handled right.
+        </h1>
+      </div>
+
+      <!-- Body content -->
+      <div class="space-y-6 lg:space-y-8">
+        <!-- Description -->
+        <p class="text-base md:text-lg leading-relaxed text-white/80 max-w-xl font-body font-light">
+          Reliable flatbed, step deck and open-deck transportation built around safety, communication and dependable delivery.
+        </p>
+
+        <!-- CTAs -->
+        <div class="flex flex-col sm:flex-row gap-4 pt-1">
+          <Button variant="primary" href="/request-a-quote" size="lg" arrow={true} class="group">
+            Request a Quote
+          </Button>
+          <Button variant="secondary" href="/drive-with-us" size="lg">
+            Drive With Us
+          </Button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

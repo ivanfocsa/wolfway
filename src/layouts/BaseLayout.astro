@@ -1,0 +1,40 @@
+---
+import SeoHead from '@/components/SeoHead.astro';
+import Header from '@/components/Header.astro';
+import Footer from '@/components/Footer.astro';
+import '@/styles/global.css';
+
+export interface Props {
+  title: string;
+  description: string;
+  canonicalUrl?: string;
+  ogImage?: string;
+}
+
+const { title, description, canonicalUrl, ogImage } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <SeoHead
+      title={title}
+      description={description}
+      canonicalUrl={canonicalUrl}
+      ogImage={ogImage}
+    />
+  </head>
+  <body class="bg-offwhite text-ink antialiased">
+    <Header />
+    <main>
+      <slot />
+    </main>
+    <Footer />
+
+    <!-- Client-side scripts -->
+    <script>
+      import '@/scripts/smooth-scroll';
+      import '@/scripts/animations';
+    </script>
+  </body>
+</html>

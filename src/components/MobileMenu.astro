@@ -1,0 +1,29 @@
+---
+/**
+ * MobileMenu component — the mobile menu markup and logic are integrated
+ * directly into Header.astro for tight coupling with the hamburger toggle.
+ *
+ * This file exists as a reference component. If you need to extract the
+ * mobile menu into a standalone component in the future, move the mobile
+ * menu markup from Header.astro here and use a custom event or shared
+ * state to coordinate open/close.
+ */
+
+import { mainNav } from '@/content/navigation';
+---
+
+<!-- Mobile menu is currently rendered inside Header.astro -->
+<!-- This component is a placeholder for future extraction -->
+<nav
+  id="mobile-menu-standalone"
+  class="hidden"
+  aria-label="Mobile navigation"
+>
+  <ul>
+    {mainNav.map((item) => (
+      <li>
+        <a href={item.href}>{item.label}</a>
+      </li>
+    ))}
+  </ul>
+</nav>

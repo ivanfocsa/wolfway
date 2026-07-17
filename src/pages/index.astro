@@ -1,0 +1,338 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import Hero from '@/components/Hero.astro';
+import ServiceCard from '@/components/ServiceCard.astro';
+import CTASection from '@/components/CTASection.astro';
+import { principles } from '@/content/company';
+import { services } from '@/content/services';
+
+const reviews = [
+  {
+    name: 'Marcus Vance',
+    role: 'Logistics Director, Steelworks Inc.',
+    text: 'WolfWay Logistics has moved over 120 loads of heavy flatbed and step-deck cargo for us this year. Their communication is hands-down the best in the industry.',
+    stars: 5,
+    date: '2 weeks ago',
+  },
+  {
+    name: 'Sarah Jennings',
+    role: 'Supply Chain Manager, Apex Energy',
+    text: 'Extremely dependable open-deck carrier. We ship high-value power equipment that requires specialized step decks. WolfWay handles every load with absolute safety.',
+    stars: 5,
+    date: '1 month ago',
+  },
+  {
+    name: 'David K. Miller',
+    role: 'Owner Operator, Miller Heavy Haul',
+    text: 'Hauling for WolfWay is great. Clear dispatch instructions, fast setup, and prompt weekly pay. They treat owner operators with respect and keep our trucks moving.',
+    stars: 5,
+    date: '3 weeks ago',
+  },
+  {
+    name: 'Robert Chen',
+    role: 'Vanguard Manufacturing',
+    text: 'Our previous broker constantly missed pickup windows. Since switching to WolfWay, our delivery success rate is at 99%. Extremely professional and reliable.',
+    stars: 5,
+    date: '4 days ago',
+  },
+  {
+    name: 'Elena Rostova',
+    role: 'Project Logistics Director',
+    text: 'Their carriers are top-tier. They arrive on time, understand proper flatbed load securement, and handle oversized freight with maximum care and safety.',
+    stars: 5,
+    date: '1 week ago',
+  },
+  {
+    name: 'Marcus Thorne',
+    role: 'Owner Operator',
+    text: 'Best broker I\'ve worked with in ten years of driving. Quick load dispatch, fair detention pay, and they don\'t play games with market rates.',
+    stars: 5,
+    date: '5 days ago',
+  },
+  {
+    name: 'Jonathan Hale',
+    role: 'GE Power Logistics',
+    text: 'WolfWay handled our oversized wind turbine shipment flawlessly. The permit coordination, route planning, and escorts were executed perfectly.',
+    stars: 5,
+    date: '3 days ago',
+  },
+  {
+    name: 'Amanda Ross',
+    role: 'Supply Chain Lead',
+    text: 'Outstanding customer service. Whenever there is a weather delay or route change, their dispatch team alerts us immediately. Highly recommend.',
+    stars: 5,
+    date: '1 month ago',
+  },
+  {
+    name: 'Kenji Sato',
+    role: 'Operations Manager, Sato Trucking',
+    text: 'Fair rates and reliable loads. They keep our fleet active all year round. Dispatch communicates clearly, is transparent, and pays on time.',
+    stars: 5,
+    date: '2 weeks ago',
+  },
+];
+---
+
+<BaseLayout
+  title="WolfWay Logistics LLC"
+  description="Open-deck freight transportation, featuring flatbed, step deck, and open deck logistics built around safety, communication and dependable delivery."
+>
+  <!-- Hero -->
+  <Hero />
+
+  <!-- Three Principles -->
+  <section class="bg-offwhite py-20 lg:py-28" data-animate="fade-up">
+    <div class="mx-auto max-w-7xl px-5 lg:px-10">
+      <div class="grid gap-10 md:grid-cols-3">
+        {principles.map((p) => (
+          <div class="border-t-2 border-cyan pt-6">
+            <h3 class="font-heading text-xl font-semibold uppercase tracking-wide text-ink">
+              {p.title}
+            </h3>
+            <p class="mt-3 text-sm leading-relaxed text-steel">
+              {p.description}
+            </p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section class="bg-offwhite py-20 lg:py-28" data-animate="fade-up">
+    <div class="mx-auto max-w-7xl px-5 lg:px-10">
+      <h2 class="font-heading text-3xl md:text-4xl lg:text-5xl font-bold uppercase text-ink">
+        Our Services
+      </h2>
+
+      <div class="mt-12 grid gap-10 md:grid-cols-3">
+        {services.map((s) => (
+          <ServiceCard
+            title={s.title}
+            description={s.description}
+            imageAlt={s.imageAlt}
+            imagePath={s.imagePath}
+            href={`/services#${s.slug}`}
+          />
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Google Reviews Section (Premium Carousel - 9 cards total, 3 by 3) -->
+  <section class="bg-navy py-20 lg:py-28 text-white relative overflow-hidden" data-animate="fade-up">
+    <!-- Subtle grid lines background -->
+    <div class="absolute inset-0 bg-[linear-gradient(to_right,#ffffff03_1px,transparent_1px),linear-gradient(to_bottom,#ffffff03_1px,transparent_1px)] bg-[size:4rem_4rem]" aria-hidden="true"></div>
+
+    <div class="mx-auto max-w-7xl px-5 lg:px-10 relative z-10">
+      <!-- Section Header -->
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <h2 class="font-heading text-3xl md:text-4xl lg:text-5xl font-bold uppercase mb-4">What Our Partners Say</h2>
+        <div class="flex items-center justify-center gap-1.5 pt-1">
+          <span class="text-xl font-bold text-cyan">5.0</span>
+          <div class="flex text-yellow-400">
+            {[...Array(5)].map(() => (
+              <svg class="h-5 w-5 fill-current" viewBox="0 0 20 20" aria-hidden="true">
+                <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+              </svg>
+            ))}
+          </div>
+          <span class="text-sm text-steel ml-2 font-body font-medium">Google Reviews</span>
+        </div>
+      </div>
+
+      <!-- Carousel Container Wrapper -->
+      <div class="relative overflow-hidden w-full">
+        <!-- Carousel Track (All 9 items aligned horizontally, sliding smoothly) -->
+        <div id="reviews-track" class="flex gap-6 transition-transform duration-700 ease-[cubic-bezier(0.25,1,0.5,1)]">
+          {reviews.map((r) => (
+            <div class="review-card w-full md:w-[calc((100%-3rem)/3)] flex-shrink-0 bg-white/5 backdrop-blur-md border border-white/10 p-7 flex flex-col justify-between hover:border-cyan/30 transition-all duration-300 group shadow-lg hover:shadow-[0_8px_30px_rgba(0,168,225,0.06)] hover:-translate-y-1 rounded-xl">
+              <div>
+                <div class="flex text-yellow-400 mb-5">
+                  {[...Array(r.stars)].map(() => (
+                    <svg class="h-4 w-4 fill-current" viewBox="0 0 20 20" aria-hidden="true">
+                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                    </svg>
+                  ))}
+                </div>
+                <p class="text-sm leading-relaxed text-white/80 italic font-body font-light">
+                  "{r.text}"
+                </p>
+              </div>
+              <div class="mt-8 pt-6 border-t border-white/5 flex items-center justify-between">
+                <div>
+                  <p class="font-heading text-base font-bold uppercase tracking-wider text-white">
+                    {r.name}
+                  </p>
+                  <p class="text-xs text-steel font-body">
+                    {r.role}
+                  </p>
+                </div>
+                <span class="text-[10px] uppercase tracking-wider text-white/30 font-semibold font-body">
+                  {r.date}
+                </span>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <!-- Desktop indicator dots (3 pages total) -->
+      <div class="hidden md:flex justify-center items-center gap-2.5 mt-10">
+        <button class="review-dot-desktop h-1.5 w-1.5 rounded-full bg-white/20 transition-all duration-300 cursor-pointer" data-slide="0" aria-label="Go to slide 1"></button>
+        <button class="review-dot-desktop h-1.5 w-1.5 rounded-full bg-white/20 transition-all duration-300 cursor-pointer" data-slide="1" aria-label="Go to slide 2"></button>
+        <button class="review-dot-desktop h-1.5 w-1.5 rounded-full bg-white/20 transition-all duration-300 cursor-pointer" data-slide="2" aria-label="Go to slide 3"></button>
+      </div>
+
+      <!-- Mobile indicator dots (9 pages total) -->
+      <div class="flex md:hidden justify-center items-center gap-1.5 mt-8 flex-wrap max-w-xs mx-auto">
+        {reviews.map((_, idx) => (
+          <button class="review-dot-mobile h-1 w-1 rounded-full bg-white/20 transition-all duration-300 cursor-pointer" data-slide={idx} aria-label={`Go to slide ${idx + 1}`}></button>
+        ))}
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Driver CTA -->
+  <CTASection
+    variant="dark"
+    heading="Drive with WolfWay"
+    description="We're looking for experienced OTR drivers and owner operators. Competitive pay, consistent freight, and a team that has your back."
+    buttonText="Apply Now"
+    buttonHref="/drive-with-us"
+  />
+
+  <!-- Carrier CTA -->
+  <CTASection
+    variant="light"
+    heading="Join Our Carrier Network"
+    description="We partner with reliable carriers across the country. Fair rates, consistent loads, and dispatch that communicates."
+    buttonText="Apply as Carrier"
+    buttonHref="/carrier"
+  />
+
+  <!-- Quote CTA -->
+  <CTASection
+    variant="dark"
+    heading="Ready to Move Your Freight?"
+    description="Get a competitive quote for your next open-deck shipment. Fast response, reliable service."
+    buttonText="Request a Quote"
+    buttonHref="/request-a-quote"
+  />
+</BaseLayout>
+
+<script>
+  const track = document.getElementById('reviews-track');
+  const dotsDesktop = document.querySelectorAll('.review-dot-desktop');
+  const dotsMobile = document.querySelectorAll('.review-dot-mobile');
+  
+  let currentIndex = 0;
+  const intervalTime = 10000; // 10 seconds per slide
+  let autoRotateInterval: any;
+  
+  function getIsDesktop() {
+    return window.innerWidth >= 768;
+  }
+
+  function getSlideCount() {
+    return getIsDesktop() ? 3 : 9;
+  }
+
+  function updateCarousel() {
+    if (!track) return;
+    const isDesktop = getIsDesktop();
+    
+    if (isDesktop) {
+      // On desktop, we slide by 100% of container width per slide page (which moves 3 cards)
+      // Since there's a gap between slides, we also need to account for it
+      // Standard translate works perfectly since track holds w-full slides
+      const gapOffset = currentIndex * 24; // 24px is gap-6
+      track.style.transform = `translateX(calc(-${currentIndex * 100}% - ${gapOffset}px))`;
+      
+      // Update desktop dots
+      dotsDesktop.forEach((dot, idx) => {
+        if (idx === currentIndex) {
+          dot.classList.remove('bg-white/20', 'w-1.5');
+          dot.classList.add('bg-cyan', 'w-4');
+        } else {
+          dot.classList.remove('bg-cyan', 'w-4');
+          dot.classList.add('bg-white/20', 'w-1.5');
+        }
+      });
+    } else {
+      // On mobile, each card is w-full. Slide card by card.
+      const gapOffset = currentIndex * 24;
+      track.style.transform = `translateX(calc(-${currentIndex * 100}% - ${gapOffset}px))`;
+      
+      // Update mobile dots
+      dotsMobile.forEach((dot, idx) => {
+        if (idx === currentIndex) {
+          dot.classList.remove('bg-white/20', 'w-1');
+          dot.classList.add('bg-cyan', 'w-3');
+        } else {
+          dot.classList.remove('bg-cyan', 'w-3');
+          dot.classList.add('bg-white/20', 'w-1');
+        }
+      });
+    }
+  }
+
+  function startAutoRotate() {
+    autoRotateInterval = setInterval(() => {
+      const slideCount = getSlideCount();
+      currentIndex = (currentIndex + 1) % slideCount;
+      updateCarousel();
+    }, intervalTime);
+  }
+
+  function stopAutoRotate() {
+    clearInterval(autoRotateInterval);
+  }
+
+  // Desktop Dot Clicks
+  dotsDesktop.forEach((dot) => {
+    dot.addEventListener('click', (e) => {
+      const target = e.target as HTMLElement;
+      currentIndex = parseInt(target.getAttribute('data-slide') || '0', 10);
+      updateCarousel();
+      stopAutoRotate();
+      startAutoRotate();
+    });
+  });
+
+  // Mobile Dot Clicks
+  dotsMobile.forEach((dot) => {
+    dot.addEventListener('click', (e) => {
+      const target = e.target as HTMLElement;
+      currentIndex = parseInt(target.getAttribute('data-slide') || '0', 10);
+      updateCarousel();
+      stopAutoRotate();
+      startAutoRotate();
+    });
+  });
+
+  // Handle window resizing to reset index limits
+  let resizeTimeout: any;
+  window.addEventListener('resize', () => {
+    clearTimeout(resizeTimeout);
+    resizeTimeout = setTimeout(() => {
+      const maxIndex = getSlideCount() - 1;
+      if (currentIndex > maxIndex) {
+        currentIndex = maxIndex;
+      }
+      updateCarousel();
+    }, 150);
+  });
+
+  // Pause on hover
+  const carouselContainer = track?.parentElement;
+  if (carouselContainer) {
+    carouselContainer.addEventListener('mouseenter', stopAutoRotate);
+    carouselContainer.addEventListener('mouseleave', startAutoRotate);
+  }
+
+  // Initialize
+  updateCarousel();
+  startAutoRotate();
+</script>

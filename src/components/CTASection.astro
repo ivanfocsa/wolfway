@@ -1,0 +1,71 @@
+---
+import Button from './Button.astro';
+
+export interface Props {
+  eyebrow?: string;
+  heading: string;
+  description: string;
+  buttonText: string;
+  buttonHref: string;
+  variant?: 'dark' | 'light';
+}
+
+const {
+  eyebrow,
+  heading,
+  description,
+  buttonText,
+  buttonHref,
+  variant = 'dark',
+} = Astro.props;
+
+const isDark = variant === 'dark';
+---
+
+<section
+  class:list={[
+    'py-20 lg:py-28',
+    isDark ? 'bg-navy' : 'bg-offwhite',
+  ]}
+  data-animate="fade-up"
+>
+  <div class="mx-auto max-w-7xl px-5 lg:px-10 text-center">
+    {eyebrow && (
+      <p
+        class:list={[
+          'font-heading text-xs font-semibold uppercase tracking-[0.2em] mb-4',
+          isDark ? 'text-cyan' : 'text-cyan',
+        ]}
+      >
+        {eyebrow}
+      </p>
+    )}
+    <h2
+      class:list={[
+        'font-heading text-3xl md:text-4xl lg:text-5xl font-bold uppercase',
+        isDark ? 'text-white' : 'text-ink',
+      ]}
+    >
+      {heading}
+    </h2>
+    <p
+      class:list={[
+        'mt-4 mx-auto max-w-2xl text-base leading-relaxed',
+        isDark ? 'text-white/60' : 'text-steel',
+      ]}
+    >
+      {description}
+    </p>
+    <div class="mt-8">
+      <Button
+        variant={isDark ? 'primary' : 'primary'}
+        href={buttonHref}
+        size="lg"
+        arrow={true}
+        class="group"
+      >
+        {buttonText}
+      </Button>
+    </div>
+  </div>
+</section>
