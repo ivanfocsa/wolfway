@@ -40,6 +40,26 @@ const { title, description, canonicalUrl, ogImage } = Astro.props;
     <script>
       import '@/scripts/smooth-scroll';
       import '@/scripts/animations';
+
+      // Reset scroll position on page swap
+      document.addEventListener('astro:after-swap', () => {
+        window.scrollTo(0, 0);
+        const lenis = (window as any).lenis;
+        if (lenis) {
+          lenis.scrollTo(0, { immediate: true });
+        }
+      });
+
+      // Double-check scroll position on page load, unless navigating to an anchor hash
+      document.addEventListener('astro:page-load', () => {
+        if (!window.location.hash) {
+          window.scrollTo(0, 0);
+          const lenis = (window as any).lenis;
+          if (lenis) {
+            lenis.scrollTo(0, { immediate: true });
+          }
+        }
+      });
     </script>
   </body>
 </html>

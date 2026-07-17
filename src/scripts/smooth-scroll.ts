@@ -25,6 +25,8 @@ if (!prefersReducedMotion && !isTouchDevice) {
     easing: (t: number) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
   });
 
+  (window as any).lenis = lenis;
+
   // Sync with GSAP ticker for ScrollTrigger compatibility
   lenis.on('scroll', ScrollTrigger.update);
   gsap.ticker.add((time: number) => {
