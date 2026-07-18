@@ -3,36 +3,70 @@
 import Button from './Button.astro';
 ---
 
-<section class="relative overflow-hidden select-none" data-animate="fade-up">
-  <div class="grid md:grid-cols-2">
-    <!-- Left Panel: Drivers -->
-    <div class="relative bg-navy py-20 sm:py-24 px-8 sm:px-12 lg:px-20 flex flex-col justify-center items-start text-white border-b md:border-b-0 border-white/5">
-      <h2 class="font-heading text-3xl sm:text-4xl font-bold uppercase text-white leading-tight">
-        Drive With WolfWay Logistics LLC
-      </h2>
-      <p class="mt-4 text-sm leading-relaxed text-slate-350 max-w-md font-body font-light">
-        We support our drivers. Consistent flatbed and step-deck freight, top-of-market pay rates, and dispatch coordinators who value your safety and home time.
-      </p>
-      <div class="mt-8 w-full sm:w-auto">
-        <Button href="/drive-with-us" variant="primary" size="lg" arrow={true} class="w-full sm:w-auto justify-center">
-          Explore Driver Openings
-        </Button>
-      </div>
-    </div>
+<section class="bg-offwhite py-16 sm:py-20 lg:py-28 select-none" data-animate="fade-up">
+  <div class="mx-auto max-w-7xl px-5 lg:px-10">
+    <div class="grid md:grid-cols-2 gap-6 lg:gap-8">
+      
+      <!-- Card 1: Drivers (Dark Theme) -->
+      <div class="group relative bg-[#111722] text-white p-8 sm:p-10 lg:p-12 rounded-2xl border border-white/10 shadow-lg hover:border-cyan/40 hover:shadow-2xl hover:-translate-y-1 transition-all duration-500 flex flex-col justify-between overflow-hidden">
+        <!-- Ambient radial glow behind card -->
+        <div class="absolute -right-20 -bottom-20 w-64 h-64 bg-cyan/10 rounded-full blur-3xl group-hover:bg-cyan/20 transition-all duration-700 pointer-events-none"></div>
 
-    <!-- Right Panel: Carriers -->
-    <div class="relative bg-offwhite py-20 sm:py-24 px-8 sm:px-12 lg:px-20 flex flex-col justify-center items-start text-ink">
-      <h2 class="font-heading text-3xl sm:text-4xl font-bold uppercase text-ink leading-tight">
-        Join Our Carrier Network
-      </h2>
-      <p class="mt-4 text-sm leading-relaxed text-slate-600 max-w-md font-body font-light">
-        Partner with a freight coordinator who communicates clearly and respects your business. Fair rates, regular volumes, and prompt payments.
-      </p>
-      <div class="mt-8 w-full sm:w-auto">
-        <Button href="/carrier" variant="secondary" size="lg" arrow={true} class="w-full sm:w-auto justify-center border-slate-300 text-ink hover:bg-slate-100/50">
-          Apply as Carrier
-        </Button>
+        <div class="relative z-10 space-y-5">
+          <!-- Icon badge -->
+          <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/5 border border-white/10 text-cyan text-xs font-heading font-semibold uppercase tracking-wider">
+            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 18.75a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h6m-9 0H3.375a1.125 1.125 0 01-1.125-1.125V14.25m17.25 4.5a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h1.125c.621 0 1.129-.504 1.09-1.124a17.902 17.902 0 00-3.213-9.193 2.056 2.056 0 00-1.58-.86H14.25M16.5 18.75h-2.25m0-11.177v-.958c0-.568-.422-1.048-.987-1.106a48.554 48.554 0 00-10.026 0 1.106 1.106 0 00-.987 1.106v7.635m12-6.677v6.677m0 4.5v-4.5m0 0h-12" />
+            </svg>
+            CDL-A Driver Careers
+          </div>
+
+          <h3 class="font-heading text-2xl sm:text-3xl lg:text-4xl font-extrabold uppercase text-white leading-tight">
+            Drive With WolfWay Logistics
+          </h3>
+          
+          <p class="text-sm sm:text-base leading-relaxed text-white/75 font-body font-light">
+            Consistent flatbed and step-deck freight, competitive per-mile rates, modern air-ride equipment, and a 24/7 team that values your time.
+          </p>
+        </div>
+
+        <div class="relative z-10 pt-8 mt-4 border-t border-white/10">
+          <Button href="/drive-with-us" variant="primary" size="lg" arrow={true} class="w-full sm:w-auto justify-center font-heading tracking-wider text-xs sm:text-sm">
+            EXPLORE DRIVER OPENINGS
+          </Button>
+        </div>
       </div>
+
+      <!-- Card 2: Carriers (Light Theme) -->
+      <div class="group relative bg-white text-ink p-8 sm:p-10 lg:p-12 rounded-2xl border border-slate-200/80 shadow-xs hover:border-cyan/40 hover:shadow-2xl hover:-translate-y-1 transition-all duration-500 flex flex-col justify-between overflow-hidden">
+        <!-- Ambient subtle glow behind card -->
+        <div class="absolute -right-20 -bottom-20 w-64 h-64 bg-slate-100 rounded-full blur-3xl group-hover:bg-cyan/5 transition-all duration-700 pointer-events-none"></div>
+
+        <div class="relative z-10 space-y-5">
+          <!-- Icon badge -->
+          <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-100 border border-slate-200 text-[#005F8A] text-xs font-heading font-semibold uppercase tracking-wider">
+            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+            </svg>
+            Carrier Partner Network
+          </div>
+
+          <h3 class="font-heading text-2xl sm:text-3xl lg:text-4xl font-extrabold uppercase text-ink leading-tight">
+            Join Our Carrier Network
+          </h3>
+          
+          <p class="text-sm sm:text-base leading-relaxed text-slate-600 font-body font-light">
+            Partner with a freight coordinator who respects your business. Fair rates, consistent open-deck volume, and fast payment terms across 48 states.
+          </p>
+        </div>
+
+        <div class="relative z-10 pt-8 mt-4 border-t border-slate-100">
+          <Button href="/carrier" variant="secondary" size="lg" arrow={true} class="w-full sm:w-auto justify-center border-slate-300 text-ink hover:bg-slate-100 font-heading tracking-wider text-xs sm:text-sm">
+            APPLY AS CARRIER
+          </Button>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>

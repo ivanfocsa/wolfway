@@ -2,11 +2,8 @@
 import BaseLayout from '@/layouts/BaseLayout.astro';
 import Hero from '@/components/Hero.astro';
 import HeroTrustBar from '@/components/HeroTrustBar.astro';
-import AudienceSelector from '@/components/AudienceSelector.astro';
-import ProcessRouteLine from '@/components/ProcessRouteLine.astro';
 import ServiceCard from '@/components/ServiceCard.astro';
 import HowItWorks from '@/components/HowItWorks.astro';
-import FAQSection from '@/components/FAQSection.astro';
 import OurStory from '@/components/OurStory.astro';
 import SplitAudience from '@/components/SplitAudience.astro';
 import CTASection from '@/components/CTASection.astro';
@@ -24,14 +21,11 @@ import { services } from '@/content/services';
   <!-- 2. Trust & Stats Bar -->
   <HeroTrustBar />
 
-  <!-- 3. Audience Selector -->
-  <AudienceSelector />
-
   <!-- 3. Our Story / Heritage Section -->
   <OurStory />
 
   <!-- 4. Services Section -->
-  <section class="bg-offwhite py-16 sm:py-20 lg:py-28 services-section" data-animate="fade-up">
+  <section class="bg-offwhite py-16 sm:py-20 lg:py-24 services-section" data-animate="fade-up">
     <div class="mx-auto max-w-7xl px-5 lg:px-10">
       <h2 class="font-heading text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold uppercase text-ink mb-12">
         Our Services
@@ -55,7 +49,7 @@ import { services } from '@/content/services';
   </section>
 
   <!-- 5. Brand Principles Section -->
-  <section class="bg-white py-16 sm:py-20 lg:py-28 border-b border-slate-100" data-animate="fade-up">
+  <section class="bg-white py-16 sm:py-20 lg:py-24 border-b border-slate-100" data-animate="fade-up">
     <div class="mx-auto max-w-7xl px-5 lg:px-10">
       <div class="mb-12 sm:mb-16">
         <h2 class="font-heading text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold uppercase text-ink">
@@ -80,10 +74,7 @@ import { services } from '@/content/services';
   <!-- 6. How It Works Section -->
   <HowItWorks />
 
-  <!-- 7. Common FAQs Preview Section -->
-  <FAQSection />
-
-  <!-- 8. Recruitment & Carrier CTA -->
+  <!-- 7. Recruitment & Carrier CTA -->
   <SplitAudience />
 
   <!-- 8. Final Freight Quote CTA -->
