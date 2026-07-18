@@ -22,18 +22,18 @@ import Button from './Button.astro';
   </div>
 
   <!-- Content -->
-  <div class="relative z-10 mx-auto max-w-7xl px-5 lg:px-10 pt-28 sm:pt-24 pb-10 w-full flex flex-col justify-center h-full">
-    <div class="max-w-3xl">
+  <div class="relative z-10 mx-auto max-w-7xl px-5 lg:px-10 pt-28 sm:pt-24 pb-12 w-full flex flex-col justify-center h-full">
+    <div class="max-w-3xl space-y-5 sm:space-y-8">
       <!-- Eyebrow -->
-      <p class="font-heading text-xs font-semibold uppercase tracking-[0.25em] text-cyan mb-4 animate-fade-in" id="hero-eyebrow" style="opacity: 0;">
+      <p class="font-heading text-xs sm:text-sm font-semibold uppercase tracking-[0.25em] text-cyan animate-fade-in" id="hero-eyebrow" style="opacity: 0;">
         OPEN-DECK FREIGHT TRANSPORTATION
       </p>
 
       <!-- H1 -->
-      <div class="overflow-hidden mb-5 lg:mb-8">
+      <div class="overflow-hidden">
         <h1
           id="hero-heading"
-          class="font-heading text-[2.6rem] leading-[0.93] sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-extrabold uppercase text-white tracking-tight"
+          class="font-heading text-[2.2rem] sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-extrabold uppercase text-white tracking-tight leading-[1.02] sm:leading-[0.93]"
           style="opacity: 0;"
         >
           When the load demands more, the details matter.
@@ -41,27 +41,27 @@ import Button from './Button.astro';
       </div>
 
       <!-- Body content -->
-      <div class="space-y-6 lg:space-y-8 animate-fade-in" id="hero-body-content" style="opacity: 0;">
+      <div class="space-y-5 sm:space-y-8 animate-fade-in" id="hero-body-content" style="opacity: 0;">
         <!-- Description -->
-        <p class="text-sm sm:text-base md:text-lg leading-relaxed text-white/75 max-w-xl font-body font-light">
+        <p class="text-sm sm:text-base md:text-lg leading-relaxed text-white/80 max-w-xl font-body font-light">
           Flatbed, step deck and open-deck freight handled with clear communication from pickup to delivery.
         </p>
 
         <!-- CTAs -->
-        <div class="flex flex-col xs:flex-row sm:flex-row gap-3 sm:gap-4 pt-1">
-          <Button variant="primary" href="/request-a-quote" size="lg" arrow={true} class="group w-full sm:w-auto justify-center">
+        <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 pt-1">
+          <Button variant="primary" href="/request-a-quote" size="lg" arrow={true} class="group w-full sm:w-auto justify-center font-heading tracking-wider py-3.5 sm:py-4 text-xs sm:text-sm">
             REQUEST A FREIGHT QUOTE
           </Button>
-          <Button variant="outline" href="/carrier" size="lg" class="w-full sm:w-auto justify-center">
+          <Button variant="outline" href="/carrier" size="lg" class="w-full sm:w-auto justify-center font-heading tracking-wider py-3.5 sm:py-4 text-xs sm:text-sm">
             BECOME A CARRIER PARTNER
           </Button>
         </div>
 
         <!-- Phone contact -->
-        <p class="text-xs text-white/50 font-body pt-1 flex items-center gap-1.5">
-          <span class="inline-block w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
-          Or speak with dispatch: 
-          <a href="tel:+12244464256" class="text-white/80 hover:text-cyan transition-colors font-semibold">
+        <p class="text-xs text-white/60 font-body flex items-center gap-2 pt-1">
+          <span class="inline-block w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+          Speak directly with dispatch: 
+          <a href="tel:+12244464256" class="text-white hover:text-cyan transition-colors font-bold tracking-wide">
             +1 (224) 446-4256
           </a>
         </p>

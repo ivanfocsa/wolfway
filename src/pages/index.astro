@@ -1,10 +1,12 @@
 ---
 import BaseLayout from '@/layouts/BaseLayout.astro';
 import Hero from '@/components/Hero.astro';
+import HeroTrustBar from '@/components/HeroTrustBar.astro';
 import AudienceSelector from '@/components/AudienceSelector.astro';
 import ProcessRouteLine from '@/components/ProcessRouteLine.astro';
 import ServiceCard from '@/components/ServiceCard.astro';
 import HowItWorks from '@/components/HowItWorks.astro';
+import OurStory from '@/components/OurStory.astro';
 import SplitAudience from '@/components/SplitAudience.astro';
 import CTASection from '@/components/CTASection.astro';
 import { principles } from '@/content/company';
@@ -18,10 +20,16 @@ import { services } from '@/content/services';
   <!-- 1. Video Hero -->
   <Hero />
 
-  <!-- 2. Audience Selector -->
+  <!-- 2. Trust & Stats Bar -->
+  <HeroTrustBar />
+
+  <!-- 3. Audience Selector -->
   <AudienceSelector />
 
-  <!-- 3. Process Route Line (Inline SVG) -->
+  <!-- 3. Our Story / Heritage Section -->
+  <OurStory />
+
+  <!-- 4. Process Route Line (Inline SVG) -->
   <ProcessRouteLine />
 
   <!-- 4. Services Section -->

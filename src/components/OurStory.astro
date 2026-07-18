@@ -1,0 +1,85 @@
+---
+import Button from './Button.astro';
+---
+
+<section class="bg-offwhite py-16 sm:py-20 lg:py-24 border-b border-slate-200/60 select-none" data-animate="fade-up">
+  <div class="mx-auto max-w-7xl px-5 lg:px-10">
+    <div class="grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+      <!-- Left Column: Story Copy -->
+      <div class="lg:col-span-7 space-y-6">
+        <p class="font-heading text-xs font-semibold uppercase tracking-[0.25em] text-[#005F8A]">
+          OUR HERITAGE
+        </p>
+        <h2 class="font-heading text-3xl sm:text-4xl lg:text-5xl font-extrabold uppercase text-ink leading-tight">
+          Built around the people behind the wheel
+        </h2>
+        <p class="text-base sm:text-lg text-slate-600 font-body font-light leading-relaxed">
+          WolfWay Logistics LLC was founded with a deep understanding of the challenges and rewards of open-deck transportation. We built our company on a simple principle: put drivers first, communicate with absolute transparency, and handle every shipment with uncompromised attention to detail.
+        </p>
+        <p class="text-sm sm:text-base text-slate-500 font-body font-light leading-relaxed">
+          From standard flatbed freight to complex step-deck and over-dimensional loads, our dispatch coordinators work directly with shippers and drivers 24/7 to ensure every mile is safe, efficient, and on schedule.
+        </p>
+
+        <div class="pt-4 flex flex-wrap gap-4">
+          <Button href="/contact" variant="secondary" size="md" class="border-slate-300 text-ink hover:bg-slate-100">
+            Contact Our Team
+          </Button>
+          <Button href="/drive-with-us" variant="primary" size="md" arrow={true}>
+            Join Our Driver Family
+          </Button>
+        </div>
+      </div>
+
+      <!-- Right Column: Key Proof Cards Grid -->
+      <div class="lg:col-span-5 grid sm:grid-cols-2 gap-4">
+        <div class="p-6 bg-white border border-slate-200/80 rounded-xl shadow-xs space-y-2">
+          <span class="inline-block p-2.5 bg-cyan/10 rounded-lg text-cyan mb-1">
+            <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+            </svg>
+          </span>
+          <h3 class="font-heading text-lg font-bold uppercase text-ink">Safety-First Culture</h3>
+          <p class="text-xs text-slate-500 font-body font-light leading-relaxed">
+            Strict FMCSA compliance, rigorous securement standards, and modern air-ride equipment.
+          </p>
+        </div>
+
+        <div class="p-6 bg-white border border-slate-200/80 rounded-xl shadow-xs space-y-2">
+          <span class="inline-block p-2.5 bg-cyan/10 rounded-lg text-cyan mb-1">
+            <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a1.994 1.994 0 01-1.414-.586m0 0L11 14h4a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2v4l.586-.586z" />
+            </svg>
+          </span>
+          <h3 class="font-heading text-lg font-bold uppercase text-ink">24/7 Human Dispatch</h3>
+          <p class="text-xs text-slate-500 font-body font-light leading-relaxed">
+            Never a call center. Real dispatchers who know your load status every minute of the day.
+          </p>
+        </div>
+
+        <div class="p-6 bg-white border border-slate-200/80 rounded-xl shadow-xs space-y-2">
+          <span class="inline-block p-2.5 bg-cyan/10 rounded-lg text-cyan mb-1">
+            <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
+            </svg>
+          </span>
+          <h3 class="font-heading text-lg font-bold uppercase text-ink">Fast Pre-Qualify</h3>
+          <p class="text-xs text-slate-500 font-body font-light leading-relaxed">
+            No 30-minute forms. Pre-qualify for quotes or driving opportunities in 30 seconds.
+          </p>
+        </div>
+
+        <div class="p-6 bg-white border border-slate-200/80 rounded-xl shadow-xs space-y-2">
+          <span class="inline-block p-2.5 bg-cyan/10 rounded-lg text-cyan mb-1">
+            <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+            </svg>
+          </span>
+          <h3 class="font-heading text-lg font-bold uppercase text-ink">Modern Fleet</h3>
+          <p class="text-xs text-slate-500 font-body font-light leading-relaxed">
+            2024–2027 Volvo & Freightliner equipment with air-ride step decks and flatbeds.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
